@@ -1,0 +1,26 @@
+import { bind } from 'angular2/src/core/di';
+import { BaseException } from 'angular2/src/facade/exceptions';
+/**
+ * A metric is measures values
+ */
+export class Metric {
+    static bindTo(delegateToken) {
+        return [bind(Metric).toFactory((delegate) => delegate, [delegateToken])];
+    }
+    /**
+     * Starts measuring
+     */
+    beginMeasure() { throw new BaseException('NYI'); }
+    /**
+     * Ends measuring and reports the data
+     * since the begin call.
+     * @param restart: Whether to restart right after this.
+     */
+    endMeasure(restart) { throw new BaseException('NYI'); }
+    /**
+     * Describes the metrics provided by this metric implementation.
+     * (e.g. units, ...)
+     */
+    describe() { throw new BaseException('NYI'); }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWV0cmljLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYmVuY2hwcmVzcy9zcmMvbWV0cmljLnRzIl0sIm5hbWVzIjpbIk1ldHJpYyIsIk1ldHJpYy5iaW5kVG8iLCJNZXRyaWMuYmVnaW5NZWFzdXJlIiwiTWV0cmljLmVuZE1lYXN1cmUiLCJNZXRyaWMuZGVzY3JpYmUiXSwibWFwcGluZ3MiOiJPQUFPLEVBQUMsSUFBSSxFQUFvQixNQUFNLHNCQUFzQjtPQUVyRCxFQUFDLGFBQWEsRUFBbUIsTUFBTSxnQ0FBZ0M7QUFFOUU7O0dBRUc7QUFDSDtJQUNFQSxPQUFPQSxNQUFNQSxDQUFDQSxhQUFhQTtRQUN6QkMsTUFBTUEsQ0FBQ0EsQ0FBQ0EsSUFBSUEsQ0FBQ0EsTUFBTUEsQ0FBQ0EsQ0FBQ0EsU0FBU0EsQ0FBQ0EsQ0FBQ0EsUUFBUUEsS0FBS0EsUUFBUUEsRUFBRUEsQ0FBQ0EsYUFBYUEsQ0FBQ0EsQ0FBQ0EsQ0FBQ0EsQ0FBQ0E7SUFDM0VBLENBQUNBO0lBRUREOztPQUVHQTtJQUNIQSxZQUFZQSxLQUFtQkUsTUFBTUEsSUFBSUEsYUFBYUEsQ0FBQ0EsS0FBS0EsQ0FBQ0EsQ0FBQ0EsQ0FBQ0EsQ0FBQ0E7SUFFaEVGOzs7O09BSUdBO0lBQ0hBLFVBQVVBLENBQUNBLE9BQWdCQSxJQUFtQ0csTUFBTUEsSUFBSUEsYUFBYUEsQ0FBQ0EsS0FBS0EsQ0FBQ0EsQ0FBQ0EsQ0FBQ0EsQ0FBQ0E7SUFFL0ZIOzs7T0FHR0E7SUFDSEEsUUFBUUEsS0FBMkJJLE1BQU1BLElBQUlBLGFBQWFBLENBQUNBLEtBQUtBLENBQUNBLENBQUNBLENBQUNBLENBQUNBO0FBQ3RFSixDQUFDQTtBQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtiaW5kLCBwcm92aWRlLCBQcm92aWRlcn0gZnJvbSAnYW5ndWxhcjIvc3JjL2NvcmUvZGknO1xuaW1wb3J0IHtQcm9taXNlLCBQcm9taXNlV3JhcHBlcn0gZnJvbSAnYW5ndWxhcjIvc3JjL2ZhY2FkZS9hc3luYyc7XG5pbXBvcnQge0Jhc2VFeGNlcHRpb24sIFdyYXBwZWRFeGNlcHRpb259IGZyb20gJ2FuZ3VsYXIyL3NyYy9mYWNhZGUvZXhjZXB0aW9ucyc7XG5cbi8qKlxuICogQSBtZXRyaWMgaXMgbWVhc3VyZXMgdmFsdWVzXG4gKi9cbmV4cG9ydCBhYnN0cmFjdCBjbGFzcyBNZXRyaWMge1xuICBzdGF0aWMgYmluZFRvKGRlbGVnYXRlVG9rZW4pOiBQcm92aWRlcltdIHtcbiAgICByZXR1cm4gW2JpbmQoTWV0cmljKS50b0ZhY3RvcnkoKGRlbGVnYXRlKSA9PiBkZWxlZ2F0ZSwgW2RlbGVnYXRlVG9rZW5dKV07XG4gIH1cblxuICAvKipcbiAgICogU3RhcnRzIG1lYXN1cmluZ1xuICAgKi9cbiAgYmVnaW5NZWFzdXJlKCk6IFByb21pc2U8YW55PiB7IHRocm93IG5ldyBCYXNlRXhjZXB0aW9uKCdOWUknKTsgfVxuXG4gIC8qKlxuICAgKiBFbmRzIG1lYXN1cmluZyBhbmQgcmVwb3J0cyB0aGUgZGF0YVxuICAgKiBzaW5jZSB0aGUgYmVnaW4gY2FsbC5cbiAgICogQHBhcmFtIHJlc3RhcnQ6IFdoZXRoZXIgdG8gcmVzdGFydCByaWdodCBhZnRlciB0aGlzLlxuICAgKi9cbiAgZW5kTWVhc3VyZShyZXN0YXJ0OiBib29sZWFuKTogUHJvbWlzZTx7W2tleTogc3RyaW5nXTogYW55fT4geyB0aHJvdyBuZXcgQmFzZUV4Y2VwdGlvbignTllJJyk7IH1cblxuICAvKipcbiAgICogRGVzY3JpYmVzIHRoZSBtZXRyaWNzIHByb3ZpZGVkIGJ5IHRoaXMgbWV0cmljIGltcGxlbWVudGF0aW9uLlxuICAgKiAoZS5nLiB1bml0cywgLi4uKVxuICAgKi9cbiAgZGVzY3JpYmUoKToge1trZXk6IHN0cmluZ106IGFueX0geyB0aHJvdyBuZXcgQmFzZUV4Y2VwdGlvbignTllJJyk7IH1cbn1cbiJdfQ==
