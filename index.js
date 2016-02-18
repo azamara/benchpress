@@ -4452,7 +4452,6 @@ var PerflogMetric = (function (_super) {
         return res;
     };
     PerflogMetric.prototype.beginMeasure = function () {
-        console.log('begin measure');
         var _this = this;
         var resultPromise = async_1.PromiseWrapper.resolve(null);
         if (this._forceGc) {

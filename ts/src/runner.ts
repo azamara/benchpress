@@ -58,7 +58,6 @@ export class Runner {
         .then((args) => {
           var capabilities = args[0];
           var userAgent = args[1];
-          console.log(args);
 
           // This might still create instances twice. We are creating a new injector with all the
           // providers.
